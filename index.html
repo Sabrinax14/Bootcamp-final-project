@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval Timer App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class=" header">
+      <h1>Interval Timer</h1>  
+    </div>
+    <main class="main">
+        <h3> Please select your settings and create your interval timer! </h3>
+       <!-- Inputs-->
+        <form action="">
+         <label class="form_label" for="setTime"> Work Time:</label>
+         <input class="form_input"
+          type="number" 
+          name="exercise" 
+          id="setTime" 
+          value="45"
+          />
+         <span class="units"> (seconds)</span>
+
+         <label class="form_label" for="setRest"> Rest Time:</label>
+         <input class="form_input" 
+         type="number" 
+         name="rest" 
+         id="setRest"
+        value="15"
+         />
+         <span class="units"> (seconds)</span>
+
+         <label class="form_label" for="setRound"> Rounds:</label>
+         <input class="form_input" 
+         type="number" 
+         name="Rounds" 
+         id="setRound" 
+         value="5"
+         />
+        </form>
+       <!-- Buttons-->
+        <div class="buttons">
+            <button  class="button"  id="submit"> Start</button>
+            <button class="button" id="reset"> Reset</button>
+        </div>
+        <!--Output & Timer Display-->
+        <div class="timer-container">
+            <div class="rounds">
+                <span> Rounds left:</span>
+                <span id="round"> 0</span>
+            </div>
+            <div id="command"> Get Ready!</div>
+            <div id="timer" class="timer">0:00</div>
+        </div>
+        <!-- sound control-->
+        <div class="sound-control">
+            <input class="soundSwitch"
+            type="checkbox"
+            name="soundSwitch"
+            id="soundSwitch"
+            checked
+            />
+          <label for="soundSwitch"> Sound</label>
+        </div>
+    </main>
+</body>
+</html>
