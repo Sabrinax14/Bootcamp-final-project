@@ -13,9 +13,9 @@
       <h1>Interval Timer</h1>  
     </div>
     <main class="main">
-        <h3> Please select your settings and create your interval timer! </h3>
+        <h3> Please select your settings and start your interval timer! </h3>
        <!-- Inputs-->
-        <form action="">
+        <div id="form">
          <label class="form_label" for="setTime"> Work Time:</label>
          <input class="form_input"
           type="number" 
@@ -23,7 +23,7 @@
           id="setTime" 
           value="45"
           />
-         <span class="units"> (seconds)</span>
+         <span class="units">(seconds)</span>
          <br>
          <br>
          <label class="form_label" for="setRest"> Rest Time:</label>
@@ -33,7 +33,7 @@
          id="setRest"
         value="15"
          />
-         <span class="units"> (seconds)</span>
+         <span class="units">(seconds)</span>
 
          <br>
          <br>
@@ -44,6 +44,8 @@
          id="setRound" 
          value="5"
          /> 
+         
+
          <br>
          <br>
          <!-- Buttons-->
@@ -52,7 +54,7 @@
             <button class="button" id="reset"> Reset</button>
             <button class="button" id="pause"> Pause</button>
         </div>
-        </form>
+    </div>
        <br>
         <!--Output & Timer Display-->
         <div class="timer-container">

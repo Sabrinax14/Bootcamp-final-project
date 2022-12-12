@@ -20,26 +20,26 @@ const audioPlayer = function () {
 };
 
 // declaring the all dom els for timer
-const startBtn = document.querySelector('.submit');
-const resetBtn = document.querySelector('.reset');
-const pauseBtn = document.querySelector('.pause');
+const startBtn = document.querySelector('#submit');
+const resetBtn = document.querySelector('#reset');
+const pauseBtn = document.querySelector('#pause');
 
 const timerEl = document.querySelector('#timer');
 const cmdEl = document.querySelector('#command');
-const roundEl = document.querySelector('.round');
+const roundEl = document.querySelector('#round');
 
-const circleTimer = document.querySelector('#timer-container');
+const circleTimer = document.querySelector('.timer-container');
 const setAlwaysOn = document.querySelector('#screen-on');
 const soundBox = document.querySelector('#soundSwitch');
 
-const formInputs = document.querySelector('#form_input');
-const setTime = document.querySelector('.setTime');
-const setRest = document.querySelector('.setRest');
-const setRounds = document.querySelector('.setRound');
+const formInputs = document.querySelectorAll('#form_input');
+const setTime = document.querySelector('#setTime');
+const setRest = document.querySelector('#setRest');
+const setRounds = document.querySelector('#setRound');
 
 // creating a msg el inside to circle timer 
 const messenger = function (msg, parentElement, time = 3){
-    if (parentElement.querySelector('.msgElement')) {
+    if (parentElement.querySelector('msgElement')) {
       return ;
     } else {
         let msgElement = document.createElement('p');
@@ -47,14 +47,15 @@ const messenger = function (msg, parentElement, time = 3){
         msgElement.classList.add('msgElement');
         msgElement.classList.add('active');
         parentElement.appendChild(msgElement);
-        parentElement.style.position ='relative';
+        parentElement.style.position = 'relative';
         setTimeout(() => {
             msgElement.classList.remove('active');
             msgElement.remove();
-            parentElement.style.position ="";
+            parentElement.style.position = "";
         }, time * 1000);
     }
 };
+
 
 // creating setting for the reset using function
 
@@ -63,7 +64,7 @@ const restValues = function () {
     setRest.value = 15;
     setRounds.value = 5;
 };
-restValues ();
+restValues();
 
 // declaring variables for formating the time 
 let interval;
@@ -72,14 +73,14 @@ let time = setTime.value;
 let rounds = setRounds.value;
 let restTime = setRest.value
 let isRunning = false;
-let isRest =false;
+let isRest = false;
 let screenAlwaysOn = false;
 
 // make a function to formating the time in timer
 function sechuman(seconds) {
     sec = seconds % 60;
-    min =parseInt(seconds / 60);
-    if(sec.toString().lenght == 1){
+    min = parseInt(seconds / 60);
+    if (sec.toString().length == 1) {
         sec = '0' + sec ;
     }
     return min + ':' + sec;
@@ -93,19 +94,19 @@ const timerSettings = function () {
     timerEl.innerHTML = sechuman(time);
     roundEl.innerHTML = rounds;
 };
+
 // set timmers
-formInputs.addEventListener('change', () => {
-    if (setTime.value || setRounds || setRest <= 1){
-        formInputs = 1;
-        messenger (`please enter higher value`, formInputs.parentElement, 3 )
-    } 
-    timerSettings();
-});
+function update(){
+    formInputs.addEventListener('change', () => {
+        
+        timerSettings();
+    });  
+};
 
 const stopTraining = function () {
     clearInterval(pauseInterval);
     clearInterval(interval);
-    isRunning =false;
+    isRunning = false;
     time = setTime.value;
     rounds = setRounds.value;
     restTime = setRest.value;
@@ -144,7 +145,7 @@ function timer(_stopFunction){
                 cmdEl.innerHTML = 'Rest!';
                 roundEl.innerHTML = rounds;
                 pauseInterval = setInterval(() => {
-                    timerEl.innerHTML = sechuman(restTime)
+                    timerEl.innerHTML = sechuman(restTime);
                     restTime--;
                     // rest times up
                     if (restTime < 0 ) {
@@ -163,9 +164,8 @@ function timer(_stopFunction){
     },1000);
 }
 
-// make the pause function to pause timer ?? or addevenlitenser
 
-// add event listenr to start, rest and pause buttn
+// // add event listenr to start, rest and pause buttn
 startBtn.addEventListener('click', () => {
     !isRunning ? timer(stopTraining) : stopTraining();
     !isRunning ? (startBtn.innerHTML = 'Start') : (startBtn.innerHTML = 'Finish');
@@ -178,22 +178,21 @@ resetBtn.addEventListener('click', () => {
     }
 });
 
-pauseBtn.addEventListener('click', () =>{
-    if (paused === undefined){
-        return;
-    }
-    if (paused){
+// create event listenr for the pause button - when pressed will transform to resume buton
+pauseBtn.addEventListener('click', () => {
+    if (paused = pauseBtn){
         pause = false;
         initaltimes = setInterval(interval, 1000);
-        pauseBtn.textContent = " ";
-        pauseBtn.classList.remove('Resume')
+        pauseBtn.innerText = " ";
+        pauseBtn.classList.remove('resume')
     } else {
      clearInterval(initaltimes);
-     pauseBtn.textContent =" ";
-     pauseBtn.classList.add('Resume')
+     pauseBtn.innerText =" ";
+     pauseBtn.classList.add('resume')
      pauseBtn.style.color = 'white';
      paused = true;
     }
+ console.log(pauseBtn);
 });
 
 circleTimer.addEventListener('click', () => {
@@ -206,3 +205,4 @@ soundBox.addEventListener('change', () => {
     console.log(soundBox.checked);
     soundBox.checked ? (soundOnOff = true) : (soundOnOff = false);
 });
+

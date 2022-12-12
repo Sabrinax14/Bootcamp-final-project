@@ -40,7 +40,7 @@ h3 {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    row-gap: 1.5rem;
-   column-gap: .75rem;
+   column-gap: 1 rem;
    align-items: center;
    font-size: 0.9rem;
    width: auto;
@@ -66,12 +66,19 @@ h3 {
     padding: 7px 10px;
     font-size: inherit;
     justify-self: center;
+    gap: 0.8rem;
+    column-gap: 2rem;   
+    row-gap: 1.5rem;
 }
 
 .form_label {
     margin-right: 10px;
     font-size: 1.2rem;
     text-align: right;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
 }
 
 .button {
