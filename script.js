@@ -99,7 +99,7 @@ const timerSettings = function () {
 function update(){
     formInputs.addEventListener('change', () => {
         
-        timerSettings();
+     timerSettings();
     });  
 };
 
@@ -179,21 +179,26 @@ resetBtn.addEventListener('click', () => {
 });
 
 // create event listenr for the pause button - when pressed will transform to resume buton
-pauseBtn.addEventListener('click', () => {
-    if (paused = pauseBtn){
-        pause = false;
-        initaltimes = setInterval(interval, 1000);
-        pauseBtn.innerText = " ";
-        pauseBtn.classList.remove('resume')
+
+pauseBtn.addEventListener('click', () =>{
+  if (paused = pauseBtn){
+     return; 
+    } 
+    if (paused){
+     pause = false;
+     initaltimes = setTimeout(timer(), 1000);
+     pauseBtn.textContent = " ";
+     pauseBtn.classList.remove('Resume')
     } else {
-     clearInterval(initaltimes);
-     pauseBtn.innerText =" ";
-     pauseBtn.classList.add('resume')
-     pauseBtn.style.color = 'white';
-     paused = true;
-    }
- console.log(pauseBtn);
+    clearInterval(initaltimes);
+    pauseBtn.textContent =" ";
+    pauseBtn.classList.add('Resume')
+    pauseBtn.style.color = 'white';
+    paused = true;
+}
 });
+    
+console.log('pause');
 
 circleTimer.addEventListener('click', () => {
     !isRunning ? timer(stopTraining) : stopTraining();
