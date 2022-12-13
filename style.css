@@ -58,25 +58,28 @@ h3 {
     grid-column: 1/4;
 }
 
-.form_input{
-    max-width: 6rem;
+.form_input {
+    max-width: 6.5rem;
     width: 100%;
     border-radius: 4px;
     border: 1px solid black;
     padding: 7px 10px;
     font-size: inherit;
     justify-self: center;
-    gap: 1rem;
-    margin-right: 1.5rem;
+    margin-right: .5rem;
 }
 
 .form_label {
-    margin-right: 10px;
+    margin-right: 20px;
     font-size: 1.2rem;
     text-align: right;
     gap: 3rem;
     margin-bottom: 1rem;
 
+}
+
+#rounds.form_label{
+    margin-right: 40px;
 }
 
 .button {
@@ -90,20 +93,24 @@ h3 {
 .button:hover {
     background-color: rgba(138, 138, 240, 0.788);
 }
+.button:active{
+    background-color: rgba(138, 138, 240, 0.788);
+    transform: translateY(4px);
+}
 
-#submit{
+#submit.button{
     border: 1px solid rgb(57, 201, 57);
     background-color: rgb(57, 201, 57);
     color: white;
 }
 
-#reset {
+#reset.button {
     border: 1px solid rgb(217, 42, 42);
     background-color: rgb(217, 42, 42);
     color: white;
 }
 
-#pause {
+#pause.button{
     border:1px solid  rgb(158, 80, 247);
     background-color:rgb(158, 80, 247) ;
     color: white;
