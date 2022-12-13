@@ -178,7 +178,8 @@ resetBtn.addEventListener('click', () => {
     }
 });
 
-// create event listenr for the pause button - when pressed will transform to resume buton
+// create event listenr for the pause button - when pressed will pasuse the timer and transform to resume button.
+// resume button will start up the timer again and transform back to pause button.
 
 pauseBtn.addEventListener('click', () =>{
   if (paused = pauseBtn){
