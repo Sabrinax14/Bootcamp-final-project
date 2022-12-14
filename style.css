@@ -33,29 +33,24 @@ h3 {
     padding: 0 1.25rem;
     display:grid;
     place-items: center;
-   
+    
 }
 
-.form{
+.form {
    display: grid;
-   grid-template-columns: 1fr, 1fr, 1fr;
+   grid-template-columns: 1fr, 1fr, 1fr, 1fr;
    row-gap: 1.4rem;
    column-gap: 1.6rem;
    align-items: center;
    font-size: 0.9rem;
    width: auto;
-}
-
-@media screen and (min-width: 28rem) {
-    .form {
-        grid-template-columns: 1fr auto 1fr;
-    }
+   
 }
 
 .form_buttons {
     display: grid;
     justify-content: center;
-    grid-column: 1/4;
+    grid-column: 3/4;
 }
 
 .form_input {
@@ -114,6 +109,15 @@ h3 {
     border:1px solid  rgb(158, 80, 247);
     background-color:rgb(158, 80, 247) ;
     color: white;
+    transform: scale(1);
+}
+
+#Resume.button {
+    border: 1px solid  rgba(110, 110, 241, 0.788);
+    background-color: rgba(110, 110, 241, 0.788);
+    color: white;
+    
+    transform: scale(0);
 }
 
 .timer-container {
@@ -176,3 +180,19 @@ h3 {
     height: 20px;
     cursor: pointer;
 }  
+
+
+@media screen and (min-width: 22rem) {
+   
+    .form {
+        grid-template-columns: 1fr 1fr auto 1fr;
+        display: grid;
+        align-items: center;
+    }
+   #div.form {
+    align-self: center;
+    align-items: center;
+    width: auto;
+   }
+}
+

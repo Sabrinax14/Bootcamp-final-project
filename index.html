@@ -5,64 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interval Timer App</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+   <link rel="stylesheet" href="style.css">
+    <script defer src="script.js" ></script>
 </head>
 <body>
     <div class=" header">
       <h1>Interval Timer</h1>  
     </div>
     <main class="main">
-        <h3> Please select your settings and start your interval timer! </h3>
+        <h3> Please select your settings and start your interval timer!</h3>
        <!-- Inputs-->
         <div id="form">
-         <label class="form_label" for="setTime"> Work Time:</label>
+         <div id="form_div">
+         <label class="form_label" for="setTime">Work Time:</label>
          <input class="form_input"
           type="number" 
           name="exercise" 
           id="setTime" 
-          value="45"
+          value=""
           />
          <span class="units">(seconds)</span>
          <br>
          <br>
-         <label class="form_label" for="setRest"> Rest Time:</label>
+         <label class="form_label" for="setRest">Rest Time:</label>
          <input class="form_input" 
          type="number" 
          name="rest" 
          id="setRest"
-        value="15"
+        value=""
          />
          <span class="units">(seconds)</span>
 
          <br>
          <br>
-         <label class="form_label" for="setRound" id="rounds"> Rounds:</label>
+         <label class="form_label" for="setRound" id="rounds">Rounds:</label>
          <input class="form_input" 
          type="number" 
          name="Rounds" 
          id="setRound" 
-         value="5"
+         value=""
          /> 
          
-
+         </div>   
          <br>
          <br>
          <!-- Buttons-->
         <div class="buttons">
-            <button  class="button"  id="submit"> Start</button>
-            <button class="button" id="reset"> Reset</button>
-            <button class="button" id="pause"> Pause</button>
+            <button  class="button"  id="submit">Start</button>
+            <button class="button" id="reset">Reset</button>
+            <button class="button" id="pause">Pause</button>
+            <button class="button" id="Resume">Resume</button>
         </div>
     </div>
        <br>
         <!--Output & Timer Display-->
         <div class="timer-container">
             <div class="rounds">
-                <span> Rounds left:</span>
-                <span id="round"> 0</span>
+                <span>Rounds left:</span>
+                <span id="round">0</span>
             </div>
-            <div id="command"> Get Ready!</div>
+            <div id="command">Get Ready!</div>
             <div id="timer" class="timer">0:00</div>
         </div>
         <!-- sound control-->
@@ -73,7 +75,7 @@
             id="soundSwitch"
             checked
             />
-          <label for="soundSwitch"> Sound</label>
+          <label for="soundSwitch">Sound</label>
         </div>
     </main>
 </body>
