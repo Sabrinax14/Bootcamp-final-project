@@ -1,3 +1,4 @@
+// Styling elements for timer circle 
 const green = '#2ee22e';
 const orange = '#ffae1b';
 
@@ -154,7 +155,8 @@ const stopTraining = function () {
     cmdEl.innerHTML = 'Get Ready!';
     // changes the cmdel to 'Get Ready'
 };
-  // creating the timer function using seinterval /_stopFunction
+
+// creating the timer function using seinterval
 function timer(){
     
     if (currentTime === 0){
@@ -253,19 +255,19 @@ function pauseTimer (){
        timer();
        }  
 
-function Resume(){
-    
-        // clearInterval(initaltimes);
-        // console.log(currentTime)
+function Resume() {
+        timerEl.textContent = currentTime;
+        console.log(currentTime);
         isRunning = true;
-        timerEl.innerHTML = sechuman(currentTime);
+        console.log(timerEl);
+      
+        let number = sechuman(currentTime);
+        console.log("get", number);
+      
         pauseBtn.innerHTML = "Pause";
-        // pauseBtn.classList.add('Resume')
-         
-    
-       // pauseBtn.style.color = 'white';
+      
         paused = false;
-        // console.log(pauseBtn);
+      
         timer();
 }
 

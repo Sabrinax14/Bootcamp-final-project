@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interval Timer App</title>
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -13,16 +13,15 @@
       <h1>Interval Timer</h1>  
     </div>
     <main class="main">
-        <h3> Please select your settings and start your interval timer!</h3>
+        <h3> Please select your settings and start your interval timer! </h3>
        <!-- Inputs-->
-        <div id="form">
-         <div id="form_div">
+        <form action="" id="timer-form">
          <label class="form_label" for="setTime">Work Time:</label>
          <input class="form_input"
           type="number" 
           name="exercise" 
           id="setTime" 
-          value=""
+          value="45"
           />
          <span class="units">(seconds)</span>
          <br>
@@ -32,21 +31,19 @@
          type="number" 
          name="rest" 
          id="setRest"
-        value=""
+        value="15"
          />
          <span class="units">(seconds)</span>
 
          <br>
          <br>
-         <label class="form_label" for="setRound" id="rounds">Rounds:</label>
+         <label class="form_label" for="setRound">Rounds:</label>
          <input class="form_input" 
          type="number" 
          name="Rounds" 
          id="setRound" 
-         value=""
+         value="5"
          /> 
-         
-         </div>   
          <br>
          <br>
          <!-- Buttons-->
@@ -54,9 +51,8 @@
             <button  class="button"  id="submit">Start</button>
             <button class="button" id="reset">Reset</button>
             <button class="button" id="pause">Pause</button>
-            <button class="button" id="Resume">Resume</button>
         </div>
-    </div>
+        </form>
        <br>
         <!--Output & Timer Display-->
         <div class="timer-container">
